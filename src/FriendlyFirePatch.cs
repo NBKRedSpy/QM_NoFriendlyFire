@@ -15,18 +15,12 @@ namespace NoFriendlyFire
         {
             Creature attacker = hitInfo.damageDealer;
 
-            //TODO: Never apply FF mitigation to player so they can still kill friendlies.  Mostly for bug issues
-            //  and also for the player being responsible for their actions.
+            //Note that the player does not have FF off so they can still kill friendlies.  Just incase the
+            //  player needs or wants to kill a friendly unit.
             if (attacker is Player || attacker == null || attacker == __instance || !attacker.IsAlly(__instance))
             {
                 return true;
             }
-
-            //Todo:  I don't think this is right for enemies.  I think only players are flagged as PlayerAlliance.
-            //  Same with friendly AI.
-
-            //The flags     VictimFaction = 2 and BeneficiaryFaction = 4 seem to both count as enemies when alliance is set in 
-            //  debugging.  So maybe correct?  Still not sure on enemies though.
 
 
             bool isPlayerSide = attacker.CreatureData.CreatureAlliance.HasFlag(CreatureAlliance.PlayerAlliance)
