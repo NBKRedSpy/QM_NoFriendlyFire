@@ -1,0 +1,11 @@
+{
+  "UniqueModName": "NBKRedSpy_NoFriendlyFire",
+  "Assemblies": [
+    "NoFriendlyFire.dll"
+  ],
+  "Dependencies": [],
+  "SteamTags": [
+    "1.0",
+    "Gameplay Tweaks"
+  ]
+}
